@@ -17,16 +17,35 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: "22"
 
       # - name: Force Failure（強制失敗）
-        # run: (exit 1)
+      # run: (exit 1)
 
       # - name: Node Ver Success（成功系）
       #   run: node --version
 
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Run tests
         run: npm run test -- --coverage
+
+  style:
+    name: Style
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check code style
+        run: npm run format:check
