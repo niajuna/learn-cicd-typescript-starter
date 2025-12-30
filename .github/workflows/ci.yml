@@ -1,6 +1,7 @@
 name: ci
 
 on:
+  # mainブランチにプルリクエストが作成または更新されたときに実行
   pull_request:
     branches: [main]
 
