@@ -23,6 +23,9 @@ jobs:
       # - name: Force Failure（強制失敗）
       # run: (exit 1)
 
+      # - name: Force Success（強制成功）
+      #   run: (exit 0)
+
       # - name: Node Ver Success（成功系）
       #   run: node --version
 
